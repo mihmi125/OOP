@@ -23,7 +23,6 @@ class Player:
         """Return the game name played most frequently by this player."""
         if not self.played_games:
             return None
-        # Safely handle the Counter result
         common = Counter(self.played_games).most_common(1)
         return common[0][0] if common else None
 
