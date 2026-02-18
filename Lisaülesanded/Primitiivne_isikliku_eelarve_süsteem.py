@@ -25,7 +25,7 @@ class Budget:
         self.entries = []
 
     def generate_id(self) -> int:
-        """Generates a unique random ID"""
+        """Generates a unique ID"""
         while True:
             new_id = randint(1000, 99999)
             if not any(entry.entry_id == new_id for entry in self.entries):

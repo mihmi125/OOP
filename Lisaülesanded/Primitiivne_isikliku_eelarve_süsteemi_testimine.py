@@ -3,7 +3,7 @@ from Primitiivne_isikliku_eelarve_süsteem import Budget, Entry
 
 @pytest.mark.timeout(1.0)
 def test_can_add_entry_validation():
-    """Check if the system correctly rejects bad data (wrong dates, negative money) and accepts good data."""
+    """Check if the system correctly rejects bad data and accepts good data."""
     b = Budget("Test Budget", 5.0)
 
     # Amount less than min_amount
