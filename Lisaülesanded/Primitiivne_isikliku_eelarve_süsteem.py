@@ -1,3 +1,4 @@
+from random import randint
 from datetime import datetime
 
 
@@ -24,12 +25,11 @@ class Budget:
         self.entries = []
 
     def generate_id(self) -> int:
-        """Find the smallest available positive integer for a unique ID."""
-        used_ids = {e.entry_id for e in self.entries}
-        candidate = 1
-        while candidate in used_ids:
-            candidate += 1
-        return candidate
+        """Generates a unique random ID"""
+        while True:
+            new_id = randint(1000, 99999)
+            if not any(entry.entry_id == new_id for entry in self.entries):
+                return new_id
 
     def can_add_entry(self, amount: float, category: str, description: str, entry_type: str, date: str) -> bool:
         """Validate if entry data meets budget requirements."""
